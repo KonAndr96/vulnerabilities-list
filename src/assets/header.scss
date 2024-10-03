@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: $accent-light;
+  }
+
+  &__button-group {
+    flex-grow: 0.006;
+    display: flex;
+    justify-content: space-between;
+  }
+}

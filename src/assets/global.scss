@@ -1,5 +1,23 @@
 @import './variables.scss';
+@import './form.scss';
+@import './action-button.scss';
+@import './form.scss';
+@import './header.scss';
+@import './inspect-view.scss';
+@import './list.scss';
 
-body {
+body,
+html {
   margin: 0;
+  padding: 0;
+  background-color: $base-dark;
+}
+
+textarea {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+main {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 1rem;
 }

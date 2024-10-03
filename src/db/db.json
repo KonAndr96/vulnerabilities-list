@@ -1,0 +1,125 @@
+{
+  "vulnerabilities": [
+    {
+      "id": "1",
+      "rank": "1",
+      "name": "Broken Access Controlssss",
+      "description": "Access control enforces policy such that users cannot act outside of their intended permissions. Failures typically lead to unauthorized information disclosure, modification, or destruction of all data or performing a business function outside the user's limits.",
+      "preventions": [
+        "With the exception of public resources, deny by default.",
+        "Implement access control mechanisms once and reuse them throughout the application, including minimizing CORS usage.",
+        "Model access controls should enforce record ownership rather than accepting that the user can create, read, update, or delete any record.",
+        "Log access control failures, alert administrators when appropriate (e.g., repeated failures).",
+        "Rate limit API and controller access to minimize the harm from automated attack tooling.",
+        "JWT tokens should not be decoded to extract user roles or permissions; perform checks on the server-side."
+      ]
+    },
+    {
+      "id": "2",
+      "rank": "2",
+      "name": "Cryptographic Failures",
+      "description": "Cryptographic failures (previously known as Sensitive Data Exposure) occur when cryptographic processes are misused or when sensitive data is inadequately protected, leading to its exposure to unauthorized parties.",
+      "preventions": [
+        "Classify data processed, stored, or transmitted by an application. Identify which data is sensitive according to privacy laws, regulations, or business needs.",
+        "Apply controls as per the classification.",
+        "Don't store sensitive data unnecessarily. Discard it as soon as possible or use PCI DSS-compliant tokenization or even truncation.",
+        "Encrypt all sensitive data at rest.",
+        "Ensure up-to-date and strong standard algorithms, protocols, and keys are in place; use proper key management.",
+        "Encrypt all data in transit with secure protocols such as TLS."
+      ]
+    },
+    {
+      "id": "3",
+      "rank": "3",
+      "name": "Injection",
+      "description": "Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization.",
+      "preventions": [
+        "Use a safe API that avoids the use of the interpreter entirely or provides a parameterized interface.",
+        "Ensure that queries are parameterized and that user input is validated and sanitized.",
+        "Use an object-relational mapper (ORM) which inherently prevents SQL injection.",
+        "Escape user-supplied input where commands must be used within interpreters.",
+        "Use a positive or 'allowlist' input validation."
+      ]
+    },
+    {
+      "id": "4",
+      "rank": "4",
+      "name": "Insecure Design",
+      "description": "Insecure design is a broad category representing different weaknesses, expressed as missing or ineffective security controls. It represents a failure to securely design software and systems, leading to vulnerabilities.",
+      "preventions": [
+        "Use a secure development lifecycle (SDLC) with security-specific objectives.",
+        "Implement and verify secure design patterns (e.g., privilege separation, defense in depth, etc.).",
+        "Use threat modeling for critical security decisions and feature planning.",
+        "Conduct design reviews with security experts."
+      ]
+    },
+    {
+      "id": "5",
+      "rank": "5",
+      "name": "Security Misconfiguration",
+      "description": "Security misconfiguration is the most commonly seen issue. It often results from insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, or verbose error messages containing sensitive information.",
+      "preventions": [
+        "A repeatable hardening process that makes it fast and easy to deploy another environment that is properly locked down.",
+        "A minimal platform without any unnecessary features, components, documentation, and samples.",
+        "Segment application architecture to provide effective and secure separation between components or tenants, with segmentation, containerization, or cloud security groups.",
+        "Deployers should establish a secure configuration baseline and ensure that it is automated as part of a CI/CD pipeline."
+      ]
+    },
+    {
+      "id": "6",
+      "rank": "6",
+      "name": "Vulnerable and Outdated Components",
+      "description": "This occurs when components such as libraries, frameworks, and other software modules, run with known vulnerabilities. Exploiting such a vulnerability can have a wide-reaching impact on the security of an application.",
+      "preventions": [
+        "Remove unused dependencies, features, components, files, and documentation.",
+        "Use components from official sources with a secure software supply chain.",
+        "Ensure the latest security patches are applied regularly.",
+        "Monitor for known vulnerabilities and keep dependencies up to date."
+      ]
+    },
+    {
+      "id": "7",
+      "rank": "7",
+      "name": "Identification and Authentication Failures",
+      "description": "Failures related to user authentication and session management often result in attackers assuming other users' identities, either temporarily or permanently. Compromising passwords, keys, or session tokens can lead to this vulnerability.",
+      "preventions": [
+        "Implement multi-factor authentication to prevent automated credential stuffing, brute force, and stolen credential reuse attacks.",
+        "Use strong password policies, store passwords securely, and use salted and hashed password storage.",
+        "Implement secure session management mechanisms and limit session lifetime."
+      ]
+    },
+    {
+      "id": "8",
+      "rank": "8",
+      "name": "Software and Data Integrity Failures",
+      "description": "This relates to vulnerabilities involving code and infrastructure that does not protect against integrity violations, such as relying on components from untrusted sources, untrusted update processes, or unvalidated data.",
+      "preventions": [
+        "Ensure that software and updates are from trusted sources using signature verification.",
+        "Implement integrity checks for critical data.",
+        "Use digital signatures to verify the authenticity of data and components."
+      ]
+    },
+    {
+      "id": "9",
+      "rank": "9",
+      "name": "Security Logging and Monitoring Failures",
+      "description": "This category focuses on the lack of logging, monitoring, and alerting capabilities. It can allow attackers to go undetected, which increases the severity of the attack.",
+      "preventions": [
+        "Ensure all security-relevant events are logged.",
+        "Enable real-time alerts for critical events.",
+        "Ensure logs are generated in a format that can be easily consumed by centralized log management solutions."
+      ]
+    },
+    {
+      "id": "10",
+      "rank": "10",
+      "name": "Server-Side Request Forgery (SSRF)",
+      "description": "SSRF flaws occur when a web application is fetching a remote resource without validating the user-supplied URL. Attackers can manipulate the server to make requests to unintended locations.",
+      "preventions": [
+        "Sanitize and validate all user-supplied input, including URLs.",
+        "Use an allowlist to control remote resource access.",
+        "Prevent the server from accessing internal systems, such as blocking requests to localhost or internal network addresses."
+      ]
+    }
+  ]
+}
